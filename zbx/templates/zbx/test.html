@@ -1,0 +1,56 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="/static/css.css">
+<style>
+#content {
+    background-color: #fff;
+    padding: 0px;
+    margin: 0 auto;
+}
+
+#content h1 {
+    font-family: "Trebuchet MS", sans-serif;
+    color: #1D81B6;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 38px;
+    text-shadow: 1px 1px 1px #aaa;
+}
+</style>
+<title>系统集成部</title>
+</head>
+<body>
+    <div id="content">
+        <form action="/batch_ack/" method="post">
+            <table width=100% class="table3">
+                <thead>
+                    <tr>
+                        <th><input type='checkbox' style='width:100px;height:100px;'></th>
+                        <th>ID/等级</th>
+                        <th>确认人/故障时间</th>
+                        <th>主机信息/报警说明</th>
+                    </tr>
+                </thead>
+                {% for pro in pro_list %}
+                <tr>
+                    <td rowspan="2"><input name="ack_list" value={{ pro.0 }} type='checkbox' style='width:100px;height:100px;'></td>
+                    <td>{{ pro.0 }} </td>
+                    <td>{{ pro.4 }} </td>
+                    <td>{{ pro.2 }} </td>
+                </tr>
+                <tr>
+                    <td>{{ pro.1 }} </td>
+                    <td>{{ pro.5 }} </td>
+                    <td>{{ pro.3 }} </td>
+                </tr>
+
+                {% endfor %}
+            </table>
+            <input type="submit" value="批量确认" style='font-size:80px;width:500px;height:300px;'>
+        </form>
+    </div>
+</body>
+</html>

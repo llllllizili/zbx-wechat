@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+    body{margin: 0;}
+    .main{				
+        width: 100%;
+        margin-top: 10px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .table{width: 100%;background-color: transparent;border-collapse:collapse;border-spacing:0}
+    .table th,.table td{padding:8px;line-height:20px;text-align: center;}
+    .table-border{border-top:1px solid #ddd;}
+    .table-border th,.table-border td{border-bottom: 1px solid #ddd;}
+    .table-bg thead{background-color: #f5fafe;}
+    .tableselected{background-color: #f5fafe;}
+    .table-bordered{border:1px solid #ddd;border-collapse:separate;*border-collapse:collapse;border-left:0}
+    .table-bordered th,.table-bordered td{border-left:1px solid #ddd}
+    .table-border.table-bordered{border-bottom:0}
+    .table-hover tbody tr:hover td{background-color:#ccc}
+</style>
+<title>公司IT</title>
+</head>
+<body>
+    <div id="content" class="main">
+        <form action="/wechat/batch_ack/" method="post">
+        <font size="4"><h2>{{ userid }} , {{ title }}</h2></font>
+        <input type="hidden" name="userid" value={{ userid }} >
+            <table class="table table-border table-bordered table-bg  table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>等级</th>
+                        <th>时间</th>
+                        <th>主机</th>
+                        <th>描述</th>
+                        <th>状态</th>
+                        <th>确认人</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for pro  in info %}
+                    <tr>
+                        <td>{{ pro.1.0 }} </td>
+                        <td>{{ pro.1.1 }} </td>
+                        <td>{{ pro.1.5 }} </td>
+                        <td>{{ pro.1.7 }} </td>
+                        <td>{{ pro.1.8 }} </td>
+                        <td>{{ pro.1.4 }} </td>
+                        <td>{{ pro.0.0 }} </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                
+                
+                
+            </table>
+        </form>
+    </div>
+</body>
+</html>

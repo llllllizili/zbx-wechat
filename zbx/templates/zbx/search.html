@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>公司IT</title>
+<style type="text/css">
+* {
+	box-sizing:border-box;
+}
+body {
+	margin:0;
+	padding:0;
+	background-image:url(ydrzimages/p3.jpg);
+	font-weight:500;
+	font-family:"Microsoft YaHei","宋体","Segoe UI","Lucida Grande",Helvetica,Arial,sans-serif,FreeSans,Arimo;
+}
+#container {
+	width:90%;
+	height:820px;
+	margin:0 auto;
+}
+div.search {
+	padding:10px 0;
+}
+form {
+	position:relative;
+	width:90%;
+	margin:300px auto;
+}
+input,button {
+	border:none;
+	outline:none;
+}
+input {
+	width:100%;
+	height:100px;
+	padding-left:13px;
+}
+button {
+	height:100px;
+	width:100px;
+	cursor:pointer;
+	position:absolute;
+}
+/*搜索框*/
+     
+.bar6 input {
+	border:2px solid #c5464a;
+	border-radius:5px;
+    font-size:80px;
+	background:transparent;
+	top:0px;
+	right:0;
+}
+.bar6 button {
+	background:#c5464a;
+	border-radius:0 5px 5px 0;
+	width:180px;
+	top:0;
+	right:0;
+}
+.bar6 button:before {
+	content:"搜索";
+	font-size:80px;
+	color:#F9F0DA;
+}
+</style>
+</head>
+<body>
+    <div id="container">
+        <div class="search bar6">
+            <form action="/wechat/search_eventid/" method="post">
+                <input type="hidden" name="userid" value={{ userid }} >
+                <input type="text"  placeholder="请输入事件ID" name="eventid">
+                <button type="submit"></button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
